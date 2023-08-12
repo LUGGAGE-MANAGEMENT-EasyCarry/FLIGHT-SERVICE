@@ -1,0 +1,26 @@
+database:
+  host: localhost
+  port: 5432
+  name: flightdb
+  username: postgres
+  password: Yaman.1903
+
+
+spring:
+  kafka:
+
+
+      bootstrap-servers: http://localhost:29092
+      consumer:
+        auto-offset-reset: earliest
+        group-id: kafka-consumer
+  application:
+    name: "flight-service"
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8671/eureka/
+
+server:
+  port: 8083
+
