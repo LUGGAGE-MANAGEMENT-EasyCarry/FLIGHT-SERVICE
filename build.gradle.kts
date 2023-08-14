@@ -33,7 +33,7 @@ dependencies {
     runtimeOnly("org.postgresql:r2dbc-postgresql")
     implementation("org.mapstruct:mapstruct:1.5.5.Final")
     kapt("org.mapstruct:mapstruct-processor:1.5.5.Final")
-
+    testImplementation("io.mockk:mockk:1.12.4")
     implementation("io.r2dbc:r2dbc-postgresql")
     implementation("org.postgresql:r2dbc-postgresql") {
         exclude("io.projectreactor.netty", "reactor-netty-http-brave")
