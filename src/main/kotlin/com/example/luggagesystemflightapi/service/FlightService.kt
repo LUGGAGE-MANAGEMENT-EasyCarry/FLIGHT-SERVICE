@@ -14,10 +14,8 @@ class FlightService(private val flightCreatedEventProducer: FlightCreatedEventPr
     }
 
     suspend fun createFlight(flight: Flight): Flight {
-        flightCreatedEventProducer.send(FlightCreatedEvent(flightId = flight.flightId))
+        flightCreatedEventProducer.send(FlightCreatedEvent(flightId = flight.flightId, info = "Data"))
         return flightRepository.save(flight)
 
     }
-
-
 }

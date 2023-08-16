@@ -2,4 +2,4 @@ package com.example.luggagesystemflightapi.domain.event
 
 import java.util.UUID
 
-data class FlightCreatedEvent(val flightId: UUID?)
+data class FlightCreatedEvent(val flightId: UUID?, val info: String)

@@ -5,17 +5,14 @@ import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.messaging.handler.annotation.Payload
+import org.springframework.stereotype.Component
 
-
+@Component
 //todo notification api ekle
 class FlightCreatedEventConsumer() {
-    val logger = LoggerFactory.getLogger(FlightCreatedEvent::class.java)
 
     @KafkaListener(topicPattern = "flightCreated", groupId = "kafka-consumer")
     fun receiver(@Payload payload: FlightCreatedEvent) {
-        logger.info("flight created")
-       runBlocking {
- // notificationService
-       }
+       println(payload.info)
     }
 }
