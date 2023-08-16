@@ -25,7 +25,8 @@ fun createFlightRequest(
 ): FlightRequest {
     return FlightRequest(flightId, pnrCode, flightDate, departureLocation, phoneNumber)
 }
+/*
 
 fun flightCreatedEvent(flightId: UUID = UUID.fromString("4aa78416-2f33-42b6-9f17-6d8b9e474174")): FlightCreatedEvent {
     return FlightCreatedEvent(flightId)
-}
+}*/

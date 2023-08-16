@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
 class FlightCreatedEventProducer(private val kafkaTemplate: KafkaTemplate<String, FlightCreatedEvent>) {
 
     fun send(payload: FlightCreatedEvent) {
-        val topic = "luggageCreated"
+        val topic = "flightCreated"
         kafkaTemplate.send(topic, payload)
     }
 }

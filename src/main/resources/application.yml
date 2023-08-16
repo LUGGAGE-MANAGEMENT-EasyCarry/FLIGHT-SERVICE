@@ -3,7 +3,7 @@ database:
   port: 5432
   name: flightdb
   username: postgres
-  password: 1212anan
+  password: Yaman.1903
 
 
 spring:

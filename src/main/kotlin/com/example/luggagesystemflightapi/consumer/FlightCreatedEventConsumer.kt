@@ -7,12 +7,12 @@ import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.messaging.handler.annotation.Payload
 import org.springframework.stereotype.Component
 
+
 @Component
-//todo notification api ekle
 class FlightCreatedEventConsumer() {
 
     @KafkaListener(topicPattern = "flightCreated", groupId = "kafka-consumer")
-    fun receiver(@Payload payload: FlightCreatedEvent) {
-       println(payload.info)
+    fun receiver(payload: FlightCreatedEvent) {
+       println("$payload")
     }
 }
