@@ -1,20 +1,13 @@
 database:
   host: localhost
-  port: 5432
-  name: flightdb
-  username: postgres
-  password: Yaman.1903
+  port: 5431
+  name: flight_db
+  username: flight
+  password: 123
 
 
 spring:
-  kafka:
-      bootstrap-servers: http://localhost:29092
-      consumer:
-        auto-offset-reset: earliest
-        group-id: kafka-consumer
-      producer:
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
   application:
     name: "flight-service"
 eureka:

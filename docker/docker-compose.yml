@@ -1,0 +1,20 @@
+version: '3.9'
+
+name: flight-api-luggage
+services:
+  bo-auth-postgres:
+    image: postgres:15.4
+    container_name: flight-api-luggage
+    ports:
+      - "5431:5432"
+    volumes:
+      - ./db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=flight
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=flight_db
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "flight_test", "-U", "flight_testuser" ]
+      timeout: 5s
+      interval: 2s
+      retries: 3
