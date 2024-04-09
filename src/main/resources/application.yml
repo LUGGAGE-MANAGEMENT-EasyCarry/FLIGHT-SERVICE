@@ -1,22 +1,24 @@
-database:
-  host: localhost
-  port: 5431
-  name: flight_db
-  username: flight
-  password: 123
-
 
 spring:
-
   application:
     name: "flight-service"
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8671/eureka/
-
-
-
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        default_schema: station
+  datasource:
+    username: ${DATASOURCE_USERNAME:flight}
+    password: ${DATASOURCE_PASSWORD:123}
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5431/flight_db}
+  flyway:
+    enabled: true
+    validate-on-migrate: true
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5431/flight_db}
+    default-schema: station
+    user: ${DATASOURCE_USERNAME:flight}
+    password: ${DATASOURCE_PASSWORD:123}
 
 server:
   port: 8083

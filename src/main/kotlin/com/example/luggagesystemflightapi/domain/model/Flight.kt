@@ -1,8 +1,30 @@
 package com.example.luggagesystemflightapi.domain.model
 
-import org.springframework.data.annotation.Id
-import org.springframework.data.relational.core.mapping.Table
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.Id
+import jakarta.persistence.Table
 import java.util.UUID
 
-@Table
-data class Flight(@Id val flightId:UUID?=null, var pnrCode:String, var flightDate: String, var departureLocation:String, var phoneNumber:Int)
+@Entity
+@Table(name = "flight")
+class Flight(
+
+        @Id
+        @GeneratedValue
+        var id:UUID? = null,
+
+        @Column(name = "pnr_code")
+        var pnrCode:String,
+
+        @Column(name = "flight_date")
+        var flightDate: String,
+
+        @Column(name = "departure_location")
+        var departureLocation:String,
+
+        @Column(name = "phone_number")
+        var phoneNumber:String
+
+)

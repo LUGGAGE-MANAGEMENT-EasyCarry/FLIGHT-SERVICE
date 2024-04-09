@@ -2,7 +2,7 @@ version: '3.9'
 
 name: flight-api-luggage
 services:
-  bo-auth-postgres:
+  flight-postgres:
     image: postgres:15.4
     container_name: flight-api-luggage
     ports:
